@@ -1484,7 +1484,7 @@ a.footer-logo {
     color: white;
     font-size: 25px;
     border: 2px solid white;
-    padding: 10px;
+    padding: 0px;
     border-radius: 14px;
     }
 .footer .container .col-md-12 .mdi {
@@ -1558,3 +1558,48 @@ a.dwnBtn {
         background: linear-gradient(45deg, #ff0904, #ef4a87);
     }
 /*--- end dwn slider btn--*/
+
+
+.home-ani
+{
+    min-height:30vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    transform-style: preserve-3d;
+    position: relative;
+    animation:animate 60s linear infinite;
+
+    /*transform:rotateX(-30deg) rotateY(30deg);*/
+}
+@keyframes animate 
+{
+    0%
+    {
+        transform:rotateX(-20deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform:rotateX(-20deg) rotateY(360deg);
+    }
+}
+.home-ani div
+{
+    position: relative;
+    transform-style: preserve-3d;
+    height:250px;
+    width:250px;
+
+}
+.home-ani div span
+{
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    transform-origin: bottom;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    background-image:linear-gradient(0deg,yellow,red);
+    transform: rotateY(calc(72deg * var(--i))) rotateX(-23deg) translateZ(119px);
+}
