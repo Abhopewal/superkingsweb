@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { PhoneDrawer } from '../Drawer/PhoneDrawer';
 import { GrNext } from 'react-icons/gr'
 
-
 import { BsCloudArrowDown } from 'react-icons/bs'
 
 const MainHeader = () => {
@@ -17,7 +16,7 @@ const MainHeader = () => {
   return (
     <>
       <PhoneDrawer modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-      <header className="foi-header landing-header" style={{paddingBottom:"250px"}}>
+      <header className="foi-header landing-header" style={{ paddingBottom: "250px" }}>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
             <NavLink className="navbar-brand" to="index.html">
@@ -25,10 +24,9 @@ const MainHeader = () => {
                 src="/betimg/appLogo.png"
                 alt="FOI"
                 style={{ height: "60px" }}
-
               />
-              <span style={{fontSize:"25px",}}> 🆂🆄🅿🅴🆁 🅺🅸🅽🅶</span>
-            </NavLink> 
+              <span style={{ fontSize: "19px", }}> 🆂🆄🅿🅴🆁 🅺🅸🅽🅶</span>
+            </NavLink>
             <button className="navbar-toggler d-lg-none" type="button">
               <span className="navbar-toggler-icon" onClick={openDrawer}></span>
             </button>
@@ -36,7 +34,7 @@ const MainHeader = () => {
               <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               </ul>
 
-              
+
               <ul className="navbar-nav mt-2 mt-lg-0">
                 <li className="nav-item mr-2 mb-3 mb-lg-0">
                   <NavLink className="btn btn-secondary" to="#"
@@ -111,13 +109,13 @@ const MainHeader = () => {
                   </p>
 
                 </p>
-                <NavLink to="/contact">
+                <a href="super_king.apk" download>
                   <button className="contact-us-btn ">
                     <BsCloudArrowDown color="white" size={25} />
                     {"  "}  <span className="contact-">  Download App </span>{" "}
 
                   </button>
-                </NavLink>
+                </a>
               </div>
               <div className="col-md-6 mt-5" style={{ textAlign: "center" }}>
                 <div class="home-ani mt-3">
@@ -131,7 +129,7 @@ const MainHeader = () => {
                     <span style={{ "--i": 4 }}></span>
                   </div>
                 </div>
-            
+
               </div>
             </div>
           </div>

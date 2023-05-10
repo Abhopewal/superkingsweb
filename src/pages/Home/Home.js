@@ -396,7 +396,7 @@ const Home = () => {
                       <li>  <FcApproval/> Win Huge Real Cash</li>
                     </ul>
 
-                    <a href="Superking.Apk" class="boxed-btn">
+                    <a href="super_king.apk" class="boxed-btn">
                       <div class="dfx aic">
                         <div class="button-icon-img">
                           <i class="fa fa-download" style={{ fontStyle: "19px", color: "#000" }}>
