@@ -17,7 +17,7 @@ const MainHeader = () => {
   return (
     <>
       <PhoneDrawer modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
-      <header className="foi-header landing-header" style={{paddingBottom:"350px"}}>
+      <header className="foi-header landing-header" style={{paddingBottom:"250px"}}>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
             <NavLink className="navbar-brand" to="index.html">
