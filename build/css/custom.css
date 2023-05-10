@@ -226,16 +226,18 @@
     color: white;
     margin-right: 20px;
     padding: 7px 50px 7px 40px;
+    margin-top: 10px;
 }
 .contact-us-btn:hover{
-    color: black;
+    color: rgb(255, 255, 255);
     background-color: transparent;
+    background-color: rgb(74, 74, 75);
 }
 .contact-{
     margin-right: 10px;
 }
 .foi-header.landing-header{
-    background-size:120px, 65% !important;
+    background-size:78px, 65% !important;
 }
 .upperdrawer {
     box-shadow: 0 .3px 5px 0 rgba(143, 142, 142, 0.2), 0 .6px 1px 0 rgba(180, 179, 179, 0.19);
@@ -1168,7 +1170,7 @@ ul {
 .project-meta {
   padding: 12px 20px 27px;
   position: relative;
-  height: 100px;
+  height: 205px;
   background: #1B1B1B;
   transition: background .3s;
   -webkit-transition: background .3s;
@@ -1263,4 +1265,8 @@ ul {
 
 .f-tech{
     font-weight: 600;
+}
+
+.city-name{
+    font-size: 25px;
 }
