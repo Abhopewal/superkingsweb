@@ -19,11 +19,12 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
             <NavLink className="navbar-brand" to="index.html">
-              <img
-                src="/images/MainLogo2.png"
+            <img
+                src="/betimg/appLogo.png"
                 alt="FOI"
-                style={{ height: "32px" }}
+                style={{ height: "60px" }}
               />
+              <span style={{ fontSize: "19px", }}> 🆂🆄🅿🅴🆁 🅺🅸🅽🅶</span>
             </NavLink>
             <button className="navbar-toggler d-lg-none" type="button">
               <span className="navbar-toggler-icon" onClick={openDrawer}></span>

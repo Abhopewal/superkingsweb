@@ -1,0 +1,63 @@
+#canvas-holder {
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+}
+#chartjs-tooltip {
+	opacity: 1;
+	position: absolute;
+	background: rgba(0, 0, 0, .7);
+	color: white;
+	border-radius: 3px;
+	-webkit-transition: all .1s ease;
+	transition: all .1s ease;
+	pointer-events: none;
+	-webkit-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+.chartjs-tooltip-key {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 10px;
+}
+
+.tool_bar {
+    margin-top: 20px;
+    text-align: left;
+}
+.tool_bar label {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #8F8F8F;
+    margin: 0 30px 5px 0;
+    white-space: nowrap;
+}
+.tool_bar label:last-child {
+	margin-right:0;
+}
+.tool_bar label span {
+    margin-right: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+}
+.blueBg {
+    background: #3683BC;
+}
+.grayBg {
+    background: #C4C4C4;
+}
+.darkgrayBg{
+	background: #8F8F8F;
+}
+.lighgrayBg{
+	background: #E4EAF0;
+}
+.warm_label label {
+    display: block;
+    margin-right: 0;
+}
