@@ -1,17 +1,23 @@
 /** @format */
 
-import React, { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import "./style.css";
 import { ImGithub, ImFacebook2 } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
 import { Form, Formik, Field } from "formik";
 import * as Yup from "yup";
+import authService from "../../services/authService";
+import toast from 'react-hot-toast';
+import Loader from "../../pages/Loader";
+
 
 export const Login = () => {
 
     const formikRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const LoginSchema = Yup.object().shape({
         email: Yup.string().email().required("Enter Your Email"),
         password: Yup.string().required("Enter The Password"),
@@ -22,8 +28,24 @@ export const Login = () => {
         password: "",
     };
 
-    const handleSubmit = (values) => {
-        console.log(values, "Value")
+    useEffect(()=>{
+        if(localStorage.getItem("token"))navigate('/dashboard');
+    },[])
+
+    const handleSubmit = async (values) => {
+        setLoading(true)
+        const res = await authService.login(values);
+        console.log(res,"res")
+        if (!res.status){
+            toast.error(res.message);
+            setLoading(false)
+        }
+         if(res.status) {
+            localStorage.setItem("token",JSON.stringify(res.token))
+            setLoading(false)
+            navigate("/dashboard")
+         }
+
     };
 
     return (
@@ -61,6 +83,7 @@ export const Login = () => {
                                     </div>
                                     <div className="mt-3">
                                         <div className="d-flex justify-content-between">
+                                        
                                             <span>
                                                 <label for="floatingInput">Password</label>
                                             </span>
@@ -85,11 +108,12 @@ export const Login = () => {
                                             <div className="d-block invalid-feedback ">
                                                 {errors.password}
                                             </div>
+
                                         ) : null}
                                     </div>
                                     <div className="mt-3">
                                         <button type="submit" class="submit-btn">
-                                            Login{" "}
+                                          {loading ?  <Loader/> : "Login"}
                                         </button>
                                     </div>
                                 </div>

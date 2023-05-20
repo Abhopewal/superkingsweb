@@ -1,105 +1,106 @@
+import { NavLink } from "react-router-dom";
 
 
-const DashboardHeader = () => {
+const DashboardHeader = (props) => {
+
+    console.log("header props", props.showFullsidebar)
     return (
         <>
-            <header class="header">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="#">
-                        <img class="logo" src="img/logo.png" alt="Logo" />
-                        <img class="logo_full" src="img/logo_full.png" alt="Logo" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+            <header className="header">
+                <nav className="navbar navbar-expand-lg navbar-light">
+                    <NavLink className="navbar-brand" to="/">
+                        <img className="logo" src="/betimg/appLogo.png" alt="Logo" />
+                        <img className="logo_full" src="/img/logo_full.png" alt="Logo" />
+                    </NavLink>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <ul class="list-unstyled expander_icon d-lg-none d-block">
+                    <ul className="list-unstyled expander_icon d-lg-none d-block">
                         <li>
-                            <a class="expander" href="#" title="Expander">
-                                <span><img class="gray_blue" src="img/Expander.svg" alt="" /></span>
-                            </a>
+                            <span><img className="gray_blue peauto " src="/img/Expander.svg" alt="img" onClick={props.showFullsidebar} /></span>
                         </li>
                     </ul>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div aria-label="breadcrumb" class="mr-auto">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#"><img class="gray_blue" src="img/home.svg" alt="" /></a></li>
-                                <li class="breadcrumb-item active" aria-current="page">USERS</li>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div aria-label="breadcrumb" className="mr-auto">
+                            <ol className="breadcrumb">
+                                <li className="breadcrumb-item"><NavLink to="#"><img className="gray_blue" src="/img/home.svg" alt="" /></NavLink></li>
+                                <li className="breadcrumb-item active" aria-current="page">USERS</li>
                             </ol>
                         </div>
-                        <ul class="navbar-nav my-2 my-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <img class="gray_blue" src="img/setting.svg" alt="" />
-                                </a>
+                        <ul className="navbar-nav my-2 my-lg-0">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="#">
+                                    <img className="gray_blue" src="/img/setting.svg" alt="" />
+                                </NavLink>
                             </li>
-                            <li class="nav-item notifi dropdown">
-                                <a class="nav-link" href="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <img class="gray_blue" src="img/wifi.svg" alt="" />
+                            <li className="nav-item notifi dropdown">
+                                <NavLink className="nav-link" to="javascript:void(0)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <img className="gray_blue" src="/img/wifi.svg" alt="" />
                                     <span>3</span>
-                                </a>
-                                <div class="dropdown-menu notifiDrop">
-                                    <a class="shdul_icon" href="javascript:void(0)"><img src="img/calendar_blue.svg" />Sheduled announcements</a>
-                                    <div class="shdul_list">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
+                                </NavLink>
+                                <div className="dropdown-menu notifiDrop">
+                                    <NavLink className="shdul_icon" to="javascript:void(0)"><img src="/img/calendar_blue.svg" />Sheduled announcements</NavLink>
+                                    <div className="shdul_list">
+                                        <div className="media align-items-center">
+                                            <div className="media-body">
                                                 <p>Free upgrade for all Gold Plan users with 1,000 free SMS!!</p>
                                             </div>
-                                            <div class="media-right">
-                                                <a href="#"><img src="img/delete.svg" /></a>
+                                            <div className="media-right">
+                                                <NavLink to="#"><img src="/img/delete.svg" /></NavLink>
                                             </div>
                                         </div>
                                         <small>Feb 18, 2020</small>
                                     </div>
-                                    <div class="shdul_list">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
+                                    <div className="shdul_list">
+                                        <div className="media align-items-center">
+                                            <div className="media-body">
                                                 <p>Free upgrade for all Gold Plan users with 1,000 free SMS!!</p>
                                             </div>
-                                            <div class="media-right">
-                                                <a href="#"><img src="img/delete.svg" /></a>
+                                            <div className="media-right">
+                                                <NavLink to="#"><img src="/img/delete.svg" /></NavLink>
                                             </div>
                                         </div>
                                         <small>Feb 18, 2020</small>
                                     </div>
-                                    <div class="shdul_list">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
+                                    <div className="shdul_list">
+                                        <div className="media align-items-center">
+                                            <div className="media-body">
                                                 <p>Free upgrade for all Gold Plan users with 1,000 free SMS!!</p>
                                             </div>
-                                            <div class="media-right">
-                                                <a href="#"><img src="img/delete.svg" /></a>
+                                            <div className="media-right">
+                                                <NavLink to="#"><img src="/img/delete.svg" /></NavLink>
                                             </div>
                                         </div>
                                         <small>Feb 18, 2020</small>
                                     </div>
-                                    <div class="shdul_list">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
+                                    <div className="shdul_list">
+                                        <div className="media align-items-center">
+                                            <div className="media-body">
                                                 <p>Free upgrade for all Gold Plan users with 1,000 free SMS!!</p>
                                             </div>
-                                            <div class="media-right">
-                                                <a href="#"><img src="img/delete.svg" /></a>
+                                            <div className="media-right">
+                                                <NavLink to="#"><img src="/img/delete.svg" /></NavLink>
                                             </div>
                                         </div>
                                         <small>Feb 18, 2020</small>
                                     </div>
-                                    <div class="manage_all text-center">
-                                        <button type="button" class="btn">MANAGE ALL</button>
+                                    <div className="manage_all text-center">
+                                        <button type="button" className="btn">MANAGE ALL</button>
                                     </div>
                                 </div>
                             </li>
 
-                            <li class="nav-item dropdown user_dropdwn">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="profile_pic"><img src="img/pro.jpg" alt /></span>John Manuel Doe
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Billing</a>
-                                    <a class="dropdown-item" href="#">Lists</a>
-                                    <a class="dropdown-item" href="#">Tags</a>
-                                    <a class="dropdown-item" href="#">Team</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
+                            <li className="nav-item dropdown user_dropdwn">
+                                <NavLink className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span className="profile_pic"><img src="/img/pro.jpg" alt /></span>John Manuel Doe
+                                </NavLink>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <NavLink className="dropdown-item" to="#">Profile</NavLink>
+                                    <NavLink className="dropdown-item" to="#">Billing</NavLink>
+                                    <NavLink className="dropdown-item" to="#">Lists</NavLink>
+                                    <NavLink className="dropdown-item" to="#">Tags</NavLink>
+                                    <NavLink className="dropdown-item" to="#">Team</NavLink>
+                                    <NavLink className="dropdown-item" to="#">Settings</NavLink>
                                 </div>
                             </li>
                         </ul>

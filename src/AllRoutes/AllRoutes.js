@@ -1,6 +1,6 @@
 /** @format */
 
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
@@ -12,9 +12,18 @@ import Technologies from "../pages/Technologies";
 import { Login } from "../Dashboard/pages/Login";
 import DashboardLayout from "../Dashboard/Layout";
 import Dashboard from "../Dashboard/pages/Dashboard";
-import Users from "../Dashboard/pages/Users";
+import Games from '../Dashboard/pages/Games';
+import {Users} from "../Dashboard/pages/Users"
 
 const AllRoutes = () => {
+
+  const token = JSON.parse(localStorage.getItem("token")) ? JSON.parse(localStorage.getItem("token")) : null;
+
+  const ProtectAdmin = ({ children }) => {
+    return token ? children : <Navigate to="/iam-admin" />;
+  };
+
+
 
   const element = useRoutes([
     { path: "/", element: <Home /> },
@@ -27,10 +36,11 @@ const AllRoutes = () => {
 
     { path: "/iam-admin", element: <Login /> },
     {
-      path: "/dashboard", element: <DashboardLayout />,
+      path: "/dashboard", element:(<ProtectAdmin><DashboardLayout /></ProtectAdmin>),
       children: [
         { path: "", element: <Dashboard /> },
-        { path: "users", element: <Users /> },
+        { path: "users", element: <Users/> },
+        {path:"games",element:<Games/>}
       ]
     },
     { path: "*", element: <NotFound /> },

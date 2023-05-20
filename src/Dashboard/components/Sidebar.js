@@ -1,70 +1,64 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Header from "../../components/Header";
 
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
     return (
         <>
-            <div class="side_bar">
-                <div class="side_menu text-center">
-                    <ul class="list-unstyled">
+            <div className={props.sidebarFull ? "side_bar sidebar_full" : "side_bar"}>
+                <div className="side_menu text-center">
+                    <ul className="list-unstyled">
                         <li>
-                            <a href="#" title="Dashboard">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/dash.svg" alt="" /></span>Dashboard
-                            </a>
+                            <NavLink to="/dashboard" title="Dashboard">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/dash.svg" alt="" /></span>Dashboard
+                            </NavLink>
                         </li>
-                        <li class="active">
-                            <a href="#" title="Map search">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/user.svg" alt="" /></span>Users
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Properties">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/sys_log.svg" alt="" /></span>System logs
-                            </a>
+                        <li className="active">
+                            <NavLink to="/dashboard/users" title="Map search">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/user.svg" alt="" /></span>Users
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" title="Skip tracing">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/call.svg" alt="" /></span>Phones
-                            </a>
+                            <NavLink to="#" title="Properties">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/sys_log.svg" alt="" /></span>System logs
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" title="Campaign">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/location.svg" alt="" /></span>Markets
-                            </a>
+                            <NavLink to="#" title="Skip tracing">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/call.svg" alt="" /></span>Phones
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" title="Campaign">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/phone.svg" alt="" /></span>Accounting
-                            </a>
+                            <NavLink to="#" title="Campaign">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/location.svg" alt="" /></span>Markets
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" title="Campaign">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/pricing.svg" alt="" /></span>Pricing
-                            </a>
+                            <NavLink to="#" title="Campaign">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/phone.svg" alt="" /></span>Accounting
+                            </NavLink>
                         </li>
                         <li>
-                            <a href="#" title="Campaign">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/cut.svg" alt="" /></span>Coupons
-                            </a>
+                            <NavLink to="#" title="Campaign">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/pricing.svg" alt="" /></span>Pricing
+                            </NavLink>
                         </li>
-                        <li>
-                            <a href="#" title="Campaign">
-                                <span class="menu_cricle"><img class="gray_icon" src="img/info.svg" alt="" /></span>SPAM words
-                            </a>
-                        </li>
+
+
                     </ul>
-                    <ul class="list-unstyled expander_icon d-none d-lg-block">
+                    <ul className="list-unstyled expander_icon d-none d-lg-block">
                         <li>
-                            <a class="expander" href="#" title="Expander">
-                                <span><img class="gray_blue" src="img/Expander.svg" alt="" /></span>
-                            </a>
+                            <span><img className="gray_blue peauto " src="/img/Expander.svg" alt="img" onClick={props.showFullsidebar} /></span>
                         </li>
                     </ul>
                 </div>
             </div>
+
+            <section className={props.sidebarFull ? "main_sec dash_board mainpadd230" : "main_sec dash_board"}>
+                <Outlet />
+            </section>
         </>
     )
 }
