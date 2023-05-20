@@ -56,7 +56,7 @@ const Sidebar = (props) => {
                 </div>
             </div>
 
-            <section className={props.sidebarFull ? "main_sec dash_board mainpadd230" : "main_sec dash_board"}>
+            <section className={props.sidebarFull ? "main_sec dash_board mainpadd230" : "main_sec dash_board"} style={{backgroundColor:"#ededed"}}>
                 <Outlet />
             </section>
         </>

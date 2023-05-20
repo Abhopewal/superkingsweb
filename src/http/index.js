@@ -2,15 +2,15 @@ import axios from "axios";
 
 
 const instance = axios.create({
-  baseURL: "http://localhost:3001/api/v1/"
+  baseURL: process.env.REACT_APP_API
 });
 
 
 instance.interceptors.request.use(function (config) {
  
   if (localStorage.getItem("token") !== null) {
-    const token = `Bearer ${JSON.parse(localStorage.getItem("token")).token}`;
-    config.headers.authorization = token;
+    const token = `Bearer ${JSON.parse(localStorage.getItem("token"))}`;
+    config.headers.Authorization = token;
   }
   return config;
 
