@@ -1,9 +1,16 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 
 
 
 const Sidebar = (props) => {
+
+    const navigate = useNavigate();
+
+    function logout() {
+        localStorage.removeItem('token');
+        navigate("/iam-admin")
+    }
 
     return (
         <>
@@ -31,11 +38,7 @@ const Sidebar = (props) => {
                                 <span className="menu_cricle"><img className="gray_icon" src="/img/call.svg" alt="" /></span>Phones
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="#" title="Campaign">
-                                <span className="menu_cricle"><img className="gray_icon" src="/img/location.svg" alt="" /></span>Markets
-                            </NavLink>
-                        </li>
+
                         <li>
                             <NavLink to="#" title="Campaign">
                                 <span className="menu_cricle"><img className="gray_icon" src="/img/phone.svg" alt="" /></span>Accounting
@@ -43,10 +46,14 @@ const Sidebar = (props) => {
                         </li>
                         <li>
                             <NavLink to="#" title="Campaign">
-                                <span className="menu_cricle"><img className="gray_icon" src="/img/pricing.svg" alt="" /></span>Pricing
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/pricing.svg" alt="" /></span>Payments
                             </NavLink>
                         </li>
-
+                        <li>
+                            <NavLink to="#" title="Logout">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/location.svg" alt="" onClick={()=>logout()}/></span>Logout
+                            </NavLink>
+                        </li>
 
                     </ul>
                     <ul className="list-unstyled expander_icon d-none d-lg-block">
