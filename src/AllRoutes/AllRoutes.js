@@ -13,7 +13,8 @@ import { Login } from "../Dashboard/pages/Login";
 import DashboardLayout from "../Dashboard/Layout";
 import Dashboard from "../Dashboard/pages/Dashboard";
 import Games from '../Dashboard/pages/Games';
-import {Users} from "../Dashboard/pages/Users"
+import {Users} from "../Dashboard/pages/Users";
+import CreateGame from "../Dashboard/pages/CreateGame";
 
 const AllRoutes = () => {
 
@@ -40,7 +41,9 @@ const AllRoutes = () => {
       children: [
         { path: "", element: <Dashboard /> },
         { path: "users", element: <Users/> },
-        {path:"games",element:<Games/>}
+        {path:"games",element:<Games/>},
+        {path:"games/create",element:<CreateGame/>},
+      
       ]
     },
     { path: "*", element: <NotFound /> },

@@ -7,22 +7,23 @@ const Sidebar = (props) => {
 
     return (
         <>
+        
             <div className={props.sidebarFull ? "side_bar sidebar_full" : "side_bar"}>
                 <div className="side_menu text-center">
                     <ul className="list-unstyled">
-                        <li>
+                        <li className="active">
                             <NavLink to="/dashboard" title="Dashboard">
                                 <span className="menu_cricle"><img className="gray_icon" src="/img/dash.svg" alt="" /></span>Dashboard
                             </NavLink>
                         </li>
-                        <li className="active">
+                        <li >
                             <NavLink to="/dashboard/users" title="Map search">
                                 <span className="menu_cricle"><img className="gray_icon" src="/img/user.svg" alt="" /></span>Users
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="#" title="Properties">
-                                <span className="menu_cricle"><img className="gray_icon" src="/img/sys_log.svg" alt="" /></span>System logs
+                        <li className="active">
+                            <NavLink to="/dashboard/games" title="Properties">
+                                <span className="menu_cricle"><img className="gray_icon" src="/img/sys_log.svg" alt="" /></span>Games
                             </NavLink>
                         </li>
                         <li>
