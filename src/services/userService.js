@@ -3,7 +3,7 @@ import { GetApi, PostApi } from '.';
 
 class UserService {
   getUsers(page) {
-    return GetApi(`admin/getUsers?page=${page}`);
+    return GetApi(`admin/user?page=${page}`);
   }
 }
 
