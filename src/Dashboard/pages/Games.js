@@ -74,7 +74,7 @@ const Games = () => {
                     <td><a class="view_icon"><img src="/img/view.svg" alt="" /></a></td>
                     <td class="text-center">{item.gameName}</td>
                     <td class="text-center">{item.startTime}</td>
-                    <td class="text-center">{item.startTime}</td>
+                    <td class="text-center">{item.endTime}</td>
                     <td class="text-center">{item.timeZone}</td>
                   </tr>
                 ))
