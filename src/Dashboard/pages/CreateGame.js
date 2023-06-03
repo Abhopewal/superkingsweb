@@ -18,13 +18,14 @@ const CreateGame = () => {
 
     const onStartTime = (time, timeString) => {
         setSelectStartTime(time);
-        setEndTime(timeString)
+        setStartTime(timeString);
     };
 
 
     const onEndTime = (time, timeString) => {
+        alert(timeString,"endtime");
         setSelectEndTime(time);
-        setStartTime(timeString);
+        setEndTime(timeString)
     };
 
 
